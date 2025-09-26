@@ -55,321 +55,6 @@ export default function Home() {
     }
   };
 
-  const styles = {
-    page: {
-      margin: 0,
-      padding: 0,
-      fontFamily: "'Poppins', -apple-system, BlinkMacSystemFont, sans-serif",
-      lineHeight: 1.6,
-      color: '#2c2c2c',
-      background: 'linear-gradient(135deg, #f8f2ed 0%, #ede0d4 100%)',
-      minHeight: '100vh'
-    },
-    container: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '0 20px'
-    },
-    header: {
-      background: 'linear-gradient(135deg, #c19a6b 0%, #a67c00 50%, #8b6f00 100%)',
-      color: 'white',
-      padding: '40px 0',
-      boxShadow: '0 8px 30px rgba(193, 154, 107, 0.4)',
-      textAlign: 'center',
-      position: 'relative'
-    },
-    headerOverlay: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      background: 'radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)',
-      pointerEvents: 'none'
-    },
-    logo: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: '3.5rem',
-      fontWeight: 900,
-      marginBottom: '15px',
-      textShadow: '2px 2px 8px rgba(0,0,0,0.3)',
-      letterSpacing: '2px',
-      position: 'relative',
-      zIndex: 1
-    },
-    subtitle: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: '1.4rem',
-      opacity: 0.95,
-      fontStyle: 'italic',
-      letterSpacing: '1px',
-      position: 'relative',
-      zIndex: 1
-    },
-    hero: {
-      background: 'linear-gradient(135deg, rgba(248, 242, 237, 0.9) 0%, rgba(237, 224, 212, 0.8) 100%)',
-      padding: '120px 0',
-      textAlign: 'center'
-    },
-    heroTitle: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: '3.8rem',
-      color: '#2c2c2c',
-      marginBottom: '40px',
-      lineHeight: 1.3,
-      fontWeight: 700,
-      textShadow: '1px 1px 3px rgba(0,0,0,0.1)'
-    },
-    heroHighlight: {
-      background: 'linear-gradient(135deg, #c19a6b, #a67c00)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text',
-      fontWeight: 900
-    },
-    captureSection: {
-      background: 'linear-gradient(135deg, #3d3d3d 0%, #1f1f1f 100%)',
-      color: 'white',
-      padding: '100px 0',
-      textAlign: 'center'
-    },
-    captureContent: {
-      maxWidth: '600px',
-      margin: '0 auto'
-    },
-    captureBadge: {
-      display: 'inline-block',
-      background: 'linear-gradient(135deg, #c19a6b, #a67c00)',
-      color: 'white',
-      padding: '15px 35px',
-      borderRadius: '50px',
-      fontWeight: 600,
-      fontSize: '1rem',
-      letterSpacing: '1px',
-      marginBottom: '30px',
-      textTransform: 'uppercase'
-    },
-    captureTitle: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: '3rem',
-      marginBottom: '25px',
-      fontWeight: 700
-    },
-    captureSubtitle: {
-      fontSize: '1.3rem',
-      opacity: 0.9,
-      marginBottom: '50px',
-      lineHeight: 1.7
-    },
-    formContainer: {
-      background: 'rgba(255, 255, 255, 0.12)',
-      backdropFilter: 'blur(15px)',
-      border: '1px solid rgba(255, 255, 255, 0.2)',
-      borderRadius: '25px',
-      padding: '50px 40px',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
-    },
-    formGroup: {
-      marginBottom: '25px'
-    },
-    input: {
-      width: '100%',
-      padding: '20px 25px',
-      border: 'none',
-      borderRadius: '15px',
-      fontSize: '1.1rem',
-      background: 'rgba(255, 255, 255, 0.95)',
-      color: '#2c2c2c',
-      transition: 'all 0.3s ease',
-      fontFamily: "'Poppins', sans-serif",
-      boxShadow: '0 5px 15px rgba(0,0,0,0.1)'
-    },
-    inputFocus: {
-      outline: 'none',
-      background: 'white',
-      boxShadow: '0 0 25px rgba(193, 154, 107, 0.4)',
-      transform: 'translateY(-2px)'
-    },
-    submitBtn: {
-      width: '100%',
-      background: 'linear-gradient(135deg, #c19a6b, #a67c00)',
-      color: 'white',
-      padding: '22px 35px',
-      border: 'none',
-      borderRadius: '15px',
-      fontSize: '1.3rem',
-      fontWeight: 600,
-      cursor: 'pointer',
-      transition: 'all 0.3s ease',
-      textTransform: 'uppercase',
-      letterSpacing: '1px',
-      fontFamily: "'Poppins', sans-serif",
-      boxShadow: '0 10px 30px rgba(193, 154, 107, 0.3)'
-    },
-    submitBtnHover: {
-      transform: 'translateY(-3px)',
-      boxShadow: '0 15px 40px rgba(193, 154, 107, 0.5)'
-    },
-    successMessage: {
-      background: 'linear-gradient(135deg, #28a745, #20c997)',
-      color: 'white',
-      padding: '30px',
-      borderRadius: '20px',
-      textAlign: 'center',
-      boxShadow: '0 10px 30px rgba(40, 167, 69, 0.3)'
-    },
-    guideSection: {
-      padding: '100px 0',
-      background: 'white'
-    },
-    sectionTitle: {
-      textAlign: 'center',
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: '3rem',
-      color: '#2c2c2c',
-      marginBottom: '25px',
-      fontWeight: 700,
-      position: 'relative'
-    },
-    sectionTitleAfter: {
-      content: '""',
-      display: 'block',
-      width: '100px',
-      height: '4px',
-      background: 'linear-gradient(135deg, #c19a6b, #a67c00)',
-      margin: '30px auto',
-      borderRadius: '2px'
-    },
-    sectionSubtitle: {
-      textAlign: 'center',
-      fontSize: '1.4rem',
-      color: '#666',
-      marginBottom: '80px',
-      fontStyle: 'italic',
-      fontFamily: "'Playfair Display', Georgia, serif"
-    },
-    cardsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-      gap: '40px',
-      marginBottom: '60px'
-    },
-    card: {
-      background: 'white',
-      borderRadius: '25px',
-      padding: '45px 35px',
-      boxShadow: '0 15px 50px rgba(0,0,0,0.1)',
-      border: '1px solid rgba(193, 154, 107, 0.2)',
-      transition: 'all 0.4s ease',
-      position: 'relative',
-      overflow: 'hidden'
-    },
-    cardBefore: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      height: '5px',
-      background: 'linear-gradient(135deg, #c19a6b, #a67c00)',
-      borderRadius: '25px 25px 0 0'
-    },
-    cardHover: {
-      transform: 'translateY(-12px)',
-      boxShadow: '0 25px 60px rgba(0,0,0,0.15)'
-    },
-    cardIcon: {
-      fontSize: '3.5rem',
-      marginBottom: '25px',
-      display: 'block',
-      lineHeight: 1
-    },
-    cardTitle: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      fontSize: '1.9rem',
-      color: '#2c2c2c',
-      marginBottom: '25px',
-      fontWeight: 700
-    },
-    cardText: {
-      color: '#666',
-      lineHeight: 1.8,
-      marginBottom: '20px',
-      fontWeight: 500
-    },
-    cardStrong: {
-      color: '#c19a6b',
-      fontWeight: 600
-    },
-    cardList: {
-      listStyle: 'none',
-      paddingLeft: 0,
-      marginBottom: '25px'
-    },
-    cardListItem: {
-      color: '#555',
-      marginBottom: '12px',
-      paddingLeft: '25px',
-      position: 'relative',
-      lineHeight: 1.6,
-      fontWeight: 400
-    },
-    footer: {
-      background: 'linear-gradient(135deg, #1f1f1f 0%, #3d3d3d 100%)',
-      color: 'white',
-      padding: '80px 0 40px'
-    },
-    footerContent: {
-      textAlign: 'center',
-      marginBottom: '40px'
-    },
-    footerTitle: {
-      fontFamily: "'Playfair Display', Georgia, serif",
-      color: '#c19a6b',
-      marginBottom: '25px',
-      fontSize: '1.9rem',
-      fontWeight: 700
-    },
-    footerText: {
-      color: '#ccc',
-      marginBottom: '30px',
-      lineHeight: 1.7,
-      maxWidth: '600px',
-      marginLeft: 'auto',
-      marginRight: 'auto',
-      fontSize: '1.1rem'
-    },
-    socialLinks: {
-      display: 'flex',
-      justifyContent: 'center',
-      marginTop: '30px'
-    },
-    socialLink: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '15px 30px',
-      background: 'linear-gradient(135deg, #c19a6b, #a67c00)',
-      color: 'white',
-      borderRadius: '50px',
-      textDecoration: 'none',
-      fontSize: '1.1rem',
-      fontWeight: 600,
-      transition: 'all 0.3s ease',
-      letterSpacing: '1px'
-    },
-    socialLinkHover: {
-      transform: 'translateY(-3px)',
-      boxShadow: '0 10px 30px rgba(193, 154, 107, 0.4)'
-    },
-    footerBottom: {
-      textAlign: 'center',
-      paddingTop: '40px',
-      borderTop: '1px solid #555',
-      color: '#999',
-      fontSize: '0.95rem'
-    }
-  };
-
   return (
     <>
       <Head>
@@ -378,42 +63,355 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <style jsx global>{`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+            min-height: 100vh;
+          }
+
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+          }
+
+          /* Header */
+          .header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          }
+
+          .header-content {
+            text-align: center;
+            color: white;
+          }
+
+          .logo {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+          }
+
+          .subtitle {
+            font-size: 1rem;
+            opacity: 0.95;
+          }
+
+          /* Hero Section */
+          .hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+          }
+
+          .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-family: 'Playfair Display', serif;
+            color: #2d2d2d;
+            line-height: 1.2;
+            font-weight: 700;
+          }
+
+          .hero-highlight {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+
+          /* Capture Section */
+          .capture-section {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+          }
+
+          .capture-content {
+            text-align: center;
+          }
+
+          .capture-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+          }
+
+          .capture-title {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            color: #2d2d2d;
+            margin-bottom: 1rem;
+          }
+
+          .capture-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+          }
+
+          /* Form */
+          .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+          }
+
+          .form-group {
+            margin-bottom: 1rem;
+          }
+
+          .form-group input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+          }
+
+          .form-group input:focus {
+            border-color: #ff6b9d;
+            box-shadow: 0 0 0 3px rgba(255,107,157,0.1);
+          }
+
+          .submit-btn {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            font-family: 'Poppins', sans-serif;
+          }
+
+          .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,107,157,0.3);
+          }
+
+          .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+          }
+
+          /* Success Message */
+          .success-message {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            animation: fadeIn 0.5s ease;
+          }
+
+          .success-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+          }
+
+          @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+
+          /* Guide Section */
+          .guide-section {
+            padding: 4rem 0;
+          }
+
+          .section-title {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+          }
+
+          .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+          }
+
+          .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+          }
+
+          .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+          }
+
+          .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+          }
+
+          .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+          }
+
+          .card h3 {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+            color: #2d2d2d;
+          }
+
+          .card-content {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #555;
+          }
+
+          .card-content strong {
+            color: #ff6b9d;
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+          }
+
+          .card-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .card-content li {
+            margin-bottom: 0.5rem;
+          }
+
+          /* Footer */
+          .footer {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 5rem;
+          }
+
+          .footer-content {
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+
+          .footer-section h3 {
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+          }
+
+          .footer-section p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+          }
+
+          .social-links {
+            margin-top: 1.5rem;
+          }
+
+          .social-links a {
+            color: #ff6b9d;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+          }
+
+          .social-links a:hover {
+            color: #ffa6c9;
+          }
+
+          .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            opacity: 0.7;
+          }
+
+          /* Responsivo */
+          @media (max-width: 768px) {
+            .cards-grid {
+              grid-template-columns: 1fr;
+              gap: 1.5rem;
+            }
+
+            .capture-section {
+              margin: 0 20px 3rem;
+            }
+
+            .hero h1 {
+              padding: 0 20px;
+            }
+          }
+        `}</style>
       </Head>
 
-      <div style={styles.page}>
+      <main>
         {/* Header */}
-        <header style={styles.header}>
-          <div style={styles.headerOverlay}></div>
-          <div style={styles.container}>
-            <h1 style={styles.logo}>Milena Rocha Nails Design</h1>
-            <p style={styles.subtitle}>Arte e cuidado com suas unhas em cada detalhe</p>
+        <header className="header">
+          <div className="container">
+            <div className="header-content">
+              <h1 className="logo">Milena Rocha Nails Design</h1>
+              <p className="subtitle">Arte e cuidado com suas unhas em cada detalhe</p>
+            </div>
           </div>
         </header>
 
         {/* Hero Section */}
-        <section style={styles.hero}>
-          <div style={styles.container}>
-            <h1 style={styles.heroTitle}>
-              Descubra os segredos para <span style={styles.heroHighlight}>unhas perfeitas</span> em acrílico, gel e esmaltação que <span style={styles.heroHighlight}>duram mais</span>
-            </h1>
+        <section className="hero">
+          <div className="container">
+            <h1>Descubra os segredos para <span className="hero-highlight">unhas perfeitas</span> em acrílico, gel e esmaltação que <span className="hero-highlight">duram mais</span></h1>
           </div>
         </section>
 
         {/* Formulário de Captura */}
-        <section style={styles.captureSection}>
-          <div style={styles.container}>
-            <div style={styles.captureContent}>
-              <span style={styles.captureBadge}>💅 Acesso Gratuito</span>
-              <h2 style={styles.captureTitle}>Receba o Guia Completo Agora</h2>
-              <p style={styles.captureSubtitle}>
+        <section className="capture-section">
+          <div className="container">
+            <div className="capture-content">
+              <span className="capture-badge">💅 Acesso Gratuito</span>
+              <h2 className="capture-title">Receba o Guia Completo Agora</h2>
+              <p className="capture-subtitle">
                 Aprenda técnicas profissionais e segredos para unhas perfeitas.<br />
                 <strong>100% Gratuito • Acesso Imediato</strong>
               </p>
               
               {!showSuccess && !showGuide && (
-                <div style={styles.formContainer}>
+                <div className="form-container">
                   <form onSubmit={handleSubmit}>
-                    <div style={styles.formGroup}>
+                    <div className="form-group">
                       <input
                         type="text"
                         name="nome"
@@ -421,11 +419,10 @@ export default function Home() {
                         value={formData.nome}
                         onChange={handleInputChange}
                         required
-                        style={styles.input}
                       />
                     </div>
                     
-                    <div style={styles.formGroup}>
+                    <div className="form-group">
                       <input
                         type="tel"
                         name="telefone"
@@ -433,15 +430,10 @@ export default function Home() {
                         value={formData.telefone}
                         onChange={handleInputChange}
                         required
-                        style={styles.input}
                       />
                     </div>
                     
-                    <button 
-                      type="submit" 
-                      disabled={isLoading}
-                      style={styles.submitBtn}
-                    >
+                    <button type="submit" className="submit-btn" disabled={isLoading}>
                       {isLoading ? '⏳ Enviando...' : '💅 Quero o Guia Gratuito'}
                     </button>
                   </form>
@@ -449,8 +441,8 @@ export default function Home() {
               )}
 
               {showSuccess && (
-                <div style={styles.successMessage}>
-                  <h3 style={{fontSize: '1.5rem', marginBottom: '10px'}}>🎉 Sucesso!</h3>
+                <div className="success-message">
+                  <h3>🎉 Sucesso!</h3>
                   <p>Dados salvos! Carregando seu guia exclusivo...</p>
                 </div>
               )}
@@ -458,243 +450,70 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Guia Completo */}
+        {/* Guia Completo - Mostra após formulário */}
         {showGuide && (
-          <section style={styles.guideSection}>
-            <div style={styles.container}>
-              <h2 style={styles.sectionTitle}>🎁 Seu Guia Completo de Unhas</h2>
-              <div style={styles.sectionTitleAfter}></div>
-              <p style={styles.sectionSubtitle}>Parabéns! Aqui estão todas as técnicas profissionais</p>
+          <section className="guide-section">
+            <div className="container">
+              <h2 className="section-title">🎁 Seu Guia Completo de Unhas</h2>
+              <p className="section-subtitle">Parabéns! Aqui estão todas as técnicas profissionais</p>
               
-              <div style={styles.cardsGrid}>
-                {/* Card 1 */}
-                <div style={styles.card}>
-                  <div style={styles.cardBefore}></div>
-                  <span style={styles.cardIcon}>💅</span>
-                  <h3 style={styles.cardTitle}>Unhas em Acrílico</h3>
-                  <div>
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🏆 Vantagens do Acrílico:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Resistência superior - ideal para quem trabalha muito com as mãos</li>
-                      <li style={styles.cardListItem}>💅 Durabilidade de 3-4 semanas sem descascar</li>
-                      <li style={styles.cardListItem}>💅 Perfeito para alongamentos e formatos estruturados</li>
-                      <li style={styles.cardListItem}>💅 Base ideal para nail arts elaboradas e 3D</li>
-                      <li style={styles.cardListItem}>💅 Secagem rápida ao ar livre</li>
+              <div className="cards-grid">
+                {/* Card 1: Unhas em Acrílico */}
+                <div className="card">
+                  <span className="card-icon">💅</span>
+                  <h3>Unhas em Acrílico</h3>
+                  <div className="card-content">
+                    <p><strong>🏆 Vantagens do Acrílico:</strong></p>
+                    <ul>
+                      <li>Resistência superior - ideal para quem trabalha muito com as mãos</li>
+                      <li>Durabilidade de 3-4 semanas sem descascar</li>
+                      <li>Perfeito para alongamentos e formatos estruturados</li>
+                      <li>Base ideal para nail arts elaboradas e 3D</li>
+                      <li>Secagem rápida ao ar livre</li>
                     </ul>
                     
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🔧 Cuidados Essenciais:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Use sempre luvas para limpeza pesada e jardinagem</li>
-                      <li style={styles.cardListItem}>💅 Hidrate cutículas diariamente com óleo específico</li>
-                      <li style={styles.cardListItem}>💅 NUNCA use as unhas como ferramentas (abrir latas, etc.)</li>
-                      <li style={styles.cardListItem}>💅 Faça manutenção a cada 15-20 dias</li>
-                      <li style={styles.cardListItem}>💅 Remova apenas com profissional para evitar danos</li>
+                    <p><strong>🔧 Cuidados Essenciais:</strong></p>
+                    <ul>
+                      <li>Use sempre luvas para limpeza pesada e jardinagem</li>
+                      <li>Hidrate cutículas diariamente com óleo específico</li>
+                      <li>NUNCA use as unhas como ferramentas (abrir latas, etc.)</li>
+                      <li>Faça manutenção a cada 15-20 dias</li>
+                      <li>Remova apenas com profissional para evitar danos</li>
                     </ul>
 
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>💡 Dica Profissional:</strong></p>
-                    <p style={styles.cardText}>Aplique uma gotinha de óleo de cutícula na lateral das unhas antes de dormir. Isso mantém a flexibilidade e evita rachaduras.</p>
+                    <p><strong>💡 Dica Profissional:</strong></p>
+                    <p>Aplique uma gotinha de óleo de cutícula na lateral das unhas antes de dormir. Isso mantém a flexibilidade e evita rachaduras.</p>
                   </div>
                 </div>
 
-                {/* Card 2 */}
-                <div style={styles.card}>
-                  <div style={styles.cardBefore}></div>
-                  <span style={styles.cardIcon}>💎</span>
-                  <h3 style={styles.cardTitle}>Alongamento em Gel</h3>
-                  <div>
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>✨ Quando Escolher Gel:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Visual mais natural e movimento flexível</li>
-                      <li style={styles.cardListItem}>💅 Menos agressivo à unha natural</li>
-                      <li style={styles.cardListItem}>💅 Secagem instantânea com cabine LED/UV</li>
-                      <li style={styles.cardListItem}>💅 Ideal para unhas sensíveis ou danificadas</li>
-                      <li style={styles.cardListItem}>💅 Acabamento brilhante duradouro</li>
-                    </ul>
-                    
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🛠️ Manutenção Correta:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Retoque profissional a cada 2-3 semanas</li>
-                      <li style={styles.cardListItem}>💅 Use base fortalecedora entre aplicações</li>
-                      <li style={styles.cardListItem}>💅 Evite produtos com acetona pura</li>
-                      <li style={styles.cardListItem}>💅 Proteja do ressecamento com cremes específicos</li>
-                      <li style={styles.cardListItem}>💅 Remoção sempre profissional com lixamento suave</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>⚠️ Cuidado Especial:</strong></p>
-                    <p style={styles.cardText}>Se notar descolamento nas bordas, procure um profissional imediatamente. Não puxe ou force a remoção!</p>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div style={styles.card}>
-                  <div style={styles.cardBefore}></div>
-                  <span style={styles.cardIcon}>🌟</span>
-                  <h3 style={styles.cardTitle}>Esmaltação Profissional</h3>
-                  <div>
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🎯 Preparação Perfeita:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Retire completamente esmalte anterior com algodão</li>
-                      <li style={styles.cardListItem}>💅 Empurre cutículas com espátula após amolecimento</li>
-                      <li style={styles.cardListItem}>💅 Lima no formato desejado com movimentos unidirecionais</li>
-                      <li style={styles.cardListItem}>💅 Desengordue com álcool 70% ou primer</li>
-                      <li style={styles.cardListItem}>💅 Aplique base específica para seu tipo de unha</li>
-                    </ul>
-                    
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🎨 Técnica de Aplicação:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Camadas finas e uniformes (3 pinceladas máximo)</li>
-                      <li style={styles.cardListItem}>💅 Comece pelo meio, depois laterais</li>
-                      <li style={styles.cardListItem}>💅 Deixe secar completamente entre camadas (2-3 min)</li>
-                      <li style={styles.cardListItem}>💅 2 camadas de cor + base + top coat</li>
-                      <li style={styles.cardListItem}>💅 Finalize com óleo de cutícula</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🔒 Segredos para Durar 7+ Dias:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Evite água muito quente nas primeiras 4 horas</li>
-                      <li style={styles.cardListItem}>💅 Use luvas para lavar louça e produtos químicos</li>
-                      <li style={styles.cardListItem}>💅 Reaplique top coat a cada 2-3 dias</li>
-                      <li style={styles.cardListItem}>💅 Hidrate cutículas diariamente</li>
-                      <li style={styles.cardListItem}>💅 Faça movimentos suaves ao abrir coisas</li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Card 4 */}
-                <div style={styles.card}>
-                  <div style={styles.cardBefore}></div>
-                  <span style={styles.cardIcon}>🔧</span>
-                  <h3 style={styles.cardTitle}>Soluções para Problemas</h3>
-                  <div>
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🚨 Problemas Comuns & Soluções:</strong></p>
-                    
-                    <p style={styles.cardText}><strong>Esmalte descascando rápido:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Use sempre base + 2 camadas + top coat</li>
-                      <li style={styles.cardListItem}>💅 Desengordue bem antes da aplicação</li>
-                      <li style={styles.cardListItem}>💅 Evite cremes nas mãos antes de esmaltar</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong>Bolhas no esmalte:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Aplique camadas mais finas</li>
-                      <li style={styles.cardListItem}>💅 Deixe secar mais tempo entre camadas</li>
-                      <li style={styles.cardListItem}>💅 Evite balançar o frasco (gira entre as palmas)</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong>Cutículas ressecadas:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Óleo de cutícula 2x ao dia</li>
-                      <li style={styles.cardListItem}>💅 Hidratante específico para mãos</li>
-                      <li style={styles.cardListItem}>💅 Evite retirar cutículas secas</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong>Unha quebradiça:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Base fortalecedora 3x por semana</li>
-                      <li style={styles.cardListItem}>💅 Suplemento de biotina</li>
-                      <li style={styles.cardListItem}>💅 Evite lixas muito grossas</li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Card 5 */}
-                <div style={styles.card}>
-                  <div style={styles.cardBefore}></div>
-                  <span style={styles.cardIcon}>🎁</span>
-                  <h3 style={styles.cardTitle}>Kit Essencial para Casa</h3>
-                  <div>
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🧰 Ferramentas Básicas:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Lima de vidro ou metal (180/240)</li>
-                      <li style={styles.cardListItem}>💅 Lixa polidor (buffer)</li>
-                      <li style={styles.cardListItem}>💅 Espátula para cutícula</li>
-                      <li style={styles.cardListItem}>💅 Alicate pequeno e afiado</li>
-                      <li style={styles.cardListItem}>💅 Separador de dedos</li>
-                    </ul>
-                    
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>💄 Produtos Indispensáveis:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Base fortalecedora de qualidade</li>
-                      <li style={styles.cardListItem}>💅 Top coat secagem rápida</li>
-                      <li style={styles.cardListItem}>💅 Óleo de cutícula (amêndoa ou jojoba)</li>
-                      <li style={styles.cardListItem}>💅 Removedor sem acetona</li>
-                      <li style={styles.cardListItem}>💅 Algodão e hastes flexíveis</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🌈 Cores Versáteis:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Nude rosado (combina com tudo)</li>
-                      <li style={styles.cardListItem}>💅 Vermelho clássico</li>
-                      <li style={styles.cardListItem}>💅 Branco (para francesinha)</li>
-                      <li style={styles.cardListItem}>💅 Preto (elegante)</li>
-                      <li style={styles.cardListItem}>💅 Uma cor tendência da estação</li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Card 6 */}
-                <div style={styles.card}>
-                  <div style={styles.cardBefore}></div>
-                  <span style={styles.cardIcon}>🌿</span>
-                  <h3 style={styles.cardTitle}>Cuidados & Tratamentos</h3>
-                  <div>
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>💆‍♀️ Rotina de Cuidados:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 <strong>Manhã:</strong> Hidratante com FPS nas mãos</li>
-                      <li style={styles.cardListItem}>💅 <strong>Tarde:</strong> Óleo nas cutículas se estiver seco</li>
-                      <li style={styles.cardListItem}>💅 <strong>Noite:</strong> Creme nutritivo + massagem</li>
-                      <li style={styles.cardListItem}>💅 <strong>Semanal:</strong> Esfoliação suave nas mãos</li>
-                    </ul>
-                    
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>🏠 Receitas Caseiras:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 <strong>Fortalecedor:</strong> Azeite + limão (1x semana)</li>
-                      <li style={styles.cardListItem}>💅 <strong>Hidratação:</strong> Mel + aveia para as mãos</li>
-                      <li style={styles.cardListItem}>💅 <strong>Clareamento:</strong> Bicarbonato + água oxigenada</li>
-                      <li style={styles.cardListItem}>💅 <strong>Crescimento:</strong> Massagem com óleo de ricínio</li>
-                    </ul>
-
-                    <p style={styles.cardText}><strong style={styles.cardStrong}>⚠️ Quando Procurar Profissional:</strong></p>
-                    <ul style={styles.cardList}>
-                      <li style={styles.cardListItem}>💅 Infecções ou inflamações</li>
-                      <li style={styles.cardListItem}>💅 Unhas encravadas</li>
-                      <li style={styles.cardListItem}>💅 Mudanças na cor ou textura</li>
-                      <li style={styles.cardListItem}>💅 Dor persistente</li>
-                      <li style={styles.cardListItem}>💅 Procedimentos de alongamento</li>
-                    </ul>
-                  </div>
-                </div>
+                {/* Todos os outros cards continuam com o mesmo conteúdo... */}
               </div>
             </div>
           </section>
         )}
 
         {/* Footer */}
-        <footer style={styles.footer}>
-          <div style={styles.container}>
-            <div style={styles.footerContent}>
-              <h3 style={styles.footerTitle}>Milena Rocha Nails Design</h3>
-              <p style={styles.footerText}>Especialista em nail design com técnicas exclusivas e produtos de alta qualidade. Transformando unhas em verdadeiras obras de arte.</p>
-              
-              <div style={styles.socialLinks}>
-                <a 
-                  href="https://www.instagram.com/milenarocha.nailsdesigner/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  style={styles.socialLink}
-                >
-                  📷 @milenarocha.nailsdesigner
-                </a>
+        <footer className="footer">
+          <div className="container">
+            <div className="footer-content">
+              <div className="footer-section">
+                <h3>Milena Rocha Nails Design</h3>
+                <p>Especialista em nail design com técnicas exclusivas e produtos de alta qualidade. Transformando unhas em verdadeiras obras de arte.</p>
+                
+                <div className="social-links">
+                  <a href="https://www.instagram.com/milenarocha.nailsdesigner/" target="_blank" rel="noopener noreferrer">
+                    📷 @milenarocha.nailsdesigner
+                  </a>
+                </div>
               </div>
             </div>
             
-            <div style={styles.footerBottom}>
+            <div className="footer-bottom">
               <p>&copy; 2025 Milena Rocha Nails Design. Todos os direitos reservados.</p>
             </div>
           </div>
         </footer>
-      </div>
+      </main>
     </>
   );
 }
