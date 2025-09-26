@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Head from 'next/head';
-import '../styles/globals.css';
 
 export default function Home() {
   const [formData, setFormData] = useState({ nome: '', telefone: '' });
@@ -65,6 +64,471 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+        <style>{`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #faf7f4 0%, #f0e6dd 100%);
+          }
+
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+          }
+
+          /* Header */
+          .header {
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 50%, #8b6914 100%);
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+          }
+
+          .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+          }
+
+          .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+          }
+
+          .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            letter-spacing: 3px;
+            line-height: 1.1;
+          }
+
+          .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-style: italic;
+            letter-spacing: 2px;
+            font-weight: 400;
+          }
+
+          /* Hero Section */
+          .hero {
+            background: linear-gradient(135deg, rgba(244, 230, 220, 0.8) 0%, rgba(255, 245, 238, 0.9) 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+          }
+
+          .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            color: #2c2c2c;
+            margin-bottom: 40px;
+            line-height: 1.3;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            font-weight: 700;
+          }
+
+          .hero-highlight {
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+          }
+
+          /* Capture Section */
+          .capture-section {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+          }
+
+          .capture-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+          }
+
+          .capture-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+          }
+
+          .capture-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            color: white;
+            font-weight: 700;
+          }
+
+          .capture-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 50px;
+            line-height: 1.7;
+          }
+
+          .form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 50px 40px;
+          }
+
+          .form-group {
+            margin-bottom: 25px;
+          }
+
+          .form-group input {
+            width: 100%;
+            padding: 18px 25px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2c2c2c;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+          }
+
+          .form-group input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+          }
+
+          .form-group input::placeholder {
+            color: #999;
+          }
+
+          .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            padding: 20px 35px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Poppins', sans-serif;
+          }
+
+          .submit-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+          }
+
+          .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+          }
+
+          .success-message {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            animation: fadeInScale 0.5s ease;
+          }
+
+          .success-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+          }
+
+          /* Guide Section */
+          .guide-section {
+            padding: 100px 0;
+            background: white;
+          }
+
+          .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #2c2c2c;
+            margin-bottom: 25px;
+            position: relative;
+            font-weight: 700;
+          }
+
+          .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            margin: 30px auto;
+            border-radius: 2px;
+          }
+
+          .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 80px;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+          }
+
+          .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+          }
+
+          .card {
+            background: white;
+            border-radius: 25px;
+            padding: 45px 35px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            border-radius: 25px 25px 0 0;
+          }
+
+          .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+          }
+
+          .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            display: block;
+            line-height: 1;
+          }
+
+          .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            margin-bottom: 25px;
+            font-weight: 700;
+          }
+
+          .card-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-weight: 500;
+          }
+
+          .card-content p strong {
+            color: #d4af37;
+            font-weight: 600;
+          }
+
+          .card-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 25px;
+          }
+
+          .card-content li {
+            color: #555;
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            font-weight: 400;
+          }
+
+          .card-content li::before {
+            content: '💅';
+            position: absolute;
+            left: 0;
+            font-size: 1rem;
+          }
+
+          /* Footer */
+          .footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: white;
+            padding: 80px 0 40px;
+          }
+
+          .footer-content {
+            text-align: center;
+            margin-bottom: 40px;
+          }
+
+          .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4af37;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            font-weight: 700;
+          }
+
+          .footer-section p {
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+          }
+
+          .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+          }
+
+          .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #d4af37, #b8941f);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+          }
+
+          .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+          }
+
+          .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.95rem;
+          }
+
+          /* Animations */
+          @keyframes fadeInScale {
+            from {
+              opacity: 0;
+              transform: scale(0.9);
+            }
+            to {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+
+          /* Responsive Design */
+          @media (max-width: 768px) {
+            .logo {
+              font-size: 2.2rem;
+            }
+            
+            .subtitle {
+              font-size: 1rem;
+            }
+            
+            .hero h1 {
+              font-size: 2.2rem;
+              line-height: 1.2;
+            }
+            
+            .capture-title {
+              font-size: 2rem;
+            }
+            
+            .section-title {
+              font-size: 2rem;
+            }
+            
+            .cards-grid {
+              grid-template-columns: 1fr;
+              gap: 30px;
+            }
+            
+            .card {
+              padding: 35px 25px;
+            }
+            
+            .form-container {
+              padding: 40px 25px;
+            }
+            
+            .container {
+              padding: 0 15px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .hero {
+              padding: 60px 0;
+            }
+            
+            .capture-section {
+              padding: 60px 0;
+            }
+            
+            .guide-section {
+              padding: 60px 0;
+            }
+            
+            .hero h1 {
+              font-size: 1.8rem;
+            }
+            
+            .capture-title {
+              font-size: 1.6rem;
+            }
+          }
+        `}</style>
       </Head>
 
       <main>
