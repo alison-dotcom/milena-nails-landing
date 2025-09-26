@@ -63,321 +63,322 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-        <style jsx global>{`
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      </Head>
+
+      <style jsx global>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+          min-height: 100vh;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+          background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+          padding: 2rem 0;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+          text-align: center;
+          color: white;
+        }
+
+        .logo {
+          font-size: 2.5rem;
+          font-family: 'Playfair Display', serif;
+          font-weight: 900;
+          letter-spacing: -0.02em;
+          margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+          font-size: 1rem;
+          opacity: 0.95;
+        }
+
+        /* Hero Section */
+        .hero {
+          padding: 4rem 0 3rem;
+          text-align: center;
+        }
+
+        .hero h1 {
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          font-family: 'Playfair Display', serif;
+          color: #2d2d2d;
+          line-height: 1.2;
+          font-weight: 700;
+        }
+
+        .hero-highlight {
+          background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        /* Capture Section */
+        .capture-section {
+          background: white;
+          border-radius: 20px;
+          max-width: 600px;
+          margin: 0 auto 3rem;
+          padding: 3rem 2rem;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .capture-content {
+          text-align: center;
+        }
+
+        .capture-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+          padding: 0.5rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-bottom: 1.5rem;
+        }
+
+        .capture-title {
+          font-size: 2rem;
+          font-family: 'Playfair Display', serif;
+          color: #2d2d2d;
+          margin-bottom: 1rem;
+        }
+
+        .capture-subtitle {
+          font-size: 1.1rem;
+          color: #666;
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+
+        /* Form */
+        .form-container {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+
+        .form-group {
+          margin-bottom: 1rem;
+        }
+
+        .form-group input {
+          width: 100%;
+          padding: 1rem 1.5rem;
+          font-size: 1rem;
+          border: 2px solid #f0f0f0;
+          border-radius: 50px;
+          outline: none;
+          transition: all 0.3s ease;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus {
+          border-color: #ff6b9d;
+          box-shadow: 0 0 0 3px rgba(255,107,157,0.1);
+        }
+
+        .submit-btn {
+          width: 100%;
+          padding: 1.2rem 2rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: white;
+          background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          margin-top: 1rem;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 30px rgba(255,107,157,0.3);
+        }
+
+        .submit-btn:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+
+        /* Success Message */
+        .success-message {
+          background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+          color: white;
+          padding: 2rem;
+          border-radius: 15px;
+          animation: fadeIn 0.5s ease;
+        }
+
+        .success-message h3 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Guide Section */
+        .guide-section {
+          padding: 4rem 0;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+          font-family: 'Playfair Display', serif;
+          text-align: center;
+          margin-bottom: 1rem;
+          color: #2d2d2d;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          font-size: 1.2rem;
+          color: #666;
+          margin-bottom: 3rem;
+        }
+
+        .cards-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+
+        .card {
+          background: white;
+          border-radius: 20px;
+          padding: 2rem;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .card-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          display: block;
+        }
+
+        .card h3 {
+          font-size: 1.8rem;
+          font-family: 'Playfair Display', serif;
+          margin-bottom: 1.5rem;
+          color: #2d2d2d;
+        }
+
+        .card-content {
+          font-size: 0.95rem;
+          line-height: 1.8;
+          color: #555;
+        }
+
+        .card-content strong {
+          color: #ff6b9d;
+          font-weight: 600;
+          display: block;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .card-content ul {
+          margin-left: 1.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .card-content li {
+          margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+          background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+          color: white;
+          padding: 3rem 0 1rem;
+          margin-top: 5rem;
+        }
+
+        .footer-content {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+          font-size: 1.8rem;
+          font-family: 'Playfair Display', serif;
+          margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+          max-width: 600px;
+          margin: 0 auto 2rem;
+          line-height: 1.6;
+          opacity: 0.9;
+        }
+
+        .social-links {
+          margin-top: 1.5rem;
+        }
+
+        .social-links a {
+          color: #ff6b9d;
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 500;
+          transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+          color: #ffa6c9;
+        }
+
+        .footer-bottom {
+          border-top: 1px solid rgba(255,255,255,0.1);
+          padding-top: 1.5rem;
+          text-align: center;
+          opacity: 0.7;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+          .cards-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
           }
 
-          body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
-            min-height: 100vh;
-          }
-
-          .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-          }
-
-          /* Header */
-          .header {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
-            padding: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-          }
-
-          .header-content {
-            text-align: center;
-            color: white;
-          }
-
-          .logo {
-            font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-          }
-
-          .subtitle {
-            font-size: 1rem;
-            opacity: 0.95;
-          }
-
-          /* Hero Section */
-          .hero {
-            padding: 4rem 0 3rem;
-            text-align: center;
+          .capture-section {
+            margin: 0 20px 3rem;
           }
 
           .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-family: 'Playfair Display', serif;
-            color: #2d2d2d;
-            line-height: 1.2;
-            font-weight: 700;
+            padding: 0 20px;
           }
-
-          .hero-highlight {
-            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-          }
-
-          /* Capture Section */
-          .capture-section {
-            background: white;
-            border-radius: 20px;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            padding: 3rem 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-          }
-
-          .capture-content {
-            text-align: center;
-          }
-
-          .capture-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-          }
-
-          .capture-title {
-            font-size: 2rem;
-            font-family: 'Playfair Display', serif;
-            color: #2d2d2d;
-            margin-bottom: 1rem;
-          }
-
-          .capture-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-          }
-
-          /* Form */
-          .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-          }
-
-          .form-group {
-            margin-bottom: 1rem;
-          }
-
-          .form-group input {
-            width: 100%;
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            border: 2px solid #f0f0f0;
-            border-radius: 50px;
-            outline: none;
-            transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-          }
-
-          .form-group input:focus {
-            border-color: #ff6b9d;
-            box-shadow: 0 0 0 3px rgba(255,107,157,0.1);
-          }
-
-          .submit-btn {
-            width: 100%;
-            padding: 1.2rem 2rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: white;
-            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-            font-family: 'Poppins', sans-serif;
-          }
-
-          .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255,107,157,0.3);
-          }
-
-          .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-          }
-
-          /* Success Message */
-          .success-message {
-            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            animation: fadeIn 0.5s ease;
-          }
-
-          .success-message h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-          }
-
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-
-          /* Guide Section */
-          .guide-section {
-            padding: 4rem 0;
-          }
-
-          .section-title {
-            font-size: 2.5rem;
-            font-family: 'Playfair Display', serif;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #2d2d2d;
-          }
-
-          .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-          }
-
-          .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-          }
-
-          .card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-          }
-
-          .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-          }
-
-          .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-          }
-
-          .card h3 {
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1.5rem;
-            color: #2d2d2d;
-          }
-
-          .card-content {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            color: #555;
-          }
-
-          .card-content strong {
-            color: #ff6b9d;
-            font-weight: 600;
-            display: block;
-            margin-top: 1rem;
-            margin-bottom: 0.5rem;
-          }
-
-          .card-content ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-          }
-
-          .card-content li {
-            margin-bottom: 0.5rem;
-          }
-
-          /* Footer */
-          .footer {
-            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 5rem;
-          }
-
-          .footer-content {
-            text-align: center;
-            margin-bottom: 2rem;
-          }
-
-          .footer-section h3 {
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-          }
-
-          .footer-section p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-            opacity: 0.9;
-          }
-
-          .social-links {
-            margin-top: 1.5rem;
-          }
-
-          .social-links a {
-            color: #ff6b9d;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-          }
-
-          .social-links a:hover {
-            color: #ffa6c9;
-          }
-
-          .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.5rem;
-            text-align: center;
-            opacity: 0.7;
-          }
-
-          /* Responsivo */
-          @media (max-width: 768px) {
-            .cards-grid {
-              grid-template-columns: 1fr;
-              gap: 1.5rem;
-            }
-
-            .capture-section {
-              margin: 0 20px 3rem;
-            }
-
-            .hero h1 {
-              padding: 0 20px;
-            }
-          }
-        `}</style>
-      </Head>
+        }
+      `}</style>
 
       <main>
         {/* Header */}
@@ -486,7 +487,170 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Todos os outros cards continuam com o mesmo conteúdo... */}
+                {/* Card 2: Alongamento em Gel */}
+                <div className="card">
+                  <span className="card-icon">💎</span>
+                  <h3>Alongamento em Gel</h3>
+                  <div className="card-content">
+                    <p><strong>✨ Quando Escolher Gel:</strong></p>
+                    <ul>
+                      <li>Visual mais natural e movimento flexível</li>
+                      <li>Menos agressivo à unha natural</li>
+                      <li>Secagem instantânea com cabine LED/UV</li>
+                      <li>Ideal para unhas sensíveis ou danificadas</li>
+                      <li>Acabamento brilhante duradouro</li>
+                    </ul>
+                    
+                    <p><strong>🛠️ Manutenção Correta:</strong></p>
+                    <ul>
+                      <li>Retoque profissional a cada 2-3 semanas</li>
+                      <li>Use base fortalecedora entre aplicações</li>
+                      <li>Evite produtos com acetona pura</li>
+                      <li>Proteja do ressecamento com cremes específicos</li>
+                      <li>Remoção sempre profissional com lixamento suave</li>
+                    </ul>
+
+                    <p><strong>⚠️ Cuidado Especial:</strong></p>
+                    <p>Se notar descolamento nas bordas, procure um profissional imediatamente. Não puxe ou force a remoção!</p>
+                  </div>
+                </div>
+
+                {/* Card 3: Esmaltação Profissional */}
+                <div className="card">
+                  <span className="card-icon">🌟</span>
+                  <h3>Esmaltação Profissional</h3>
+                  <div className="card-content">
+                    <p><strong>🎯 Preparação Perfeita:</strong></p>
+                    <ul>
+                      <li>Retire completamente esmalte anterior com algodão</li>
+                      <li>Empurre cutículas com espátula após amolecimento</li>
+                      <li>Lima no formato desejado com movimentos unidirecionais</li>
+                      <li>Desengordue com álcool 70% ou primer</li>
+                      <li>Aplique base específica para seu tipo de unha</li>
+                    </ul>
+                    
+                    <p><strong>🎨 Técnica de Aplicação:</strong></p>
+                    <ul>
+                      <li>Camadas finas e uniformes (3 pinceladas máximo)</li>
+                      <li>Comece pelo meio, depois laterais</li>
+                      <li>Deixe secar completamente entre camadas (2-3 min)</li>
+                      <li>2 camadas de cor + base + top coat</li>
+                      <li>Finalize com óleo de cutícula</li>
+                    </ul>
+
+                    <p><strong>🔒 Segredos para Durar 7+ Dias:</strong></p>
+                    <ul>
+                      <li>Evite água muito quente nas primeiras 4 horas</li>
+                      <li>Use luvas para lavar louça e produtos químicos</li>
+                      <li>Reaplique top coat a cada 2-3 dias</li>
+                      <li>Hidrate cutículas diariamente</li>
+                      <li>Faça movimentos suaves ao abrir coisas</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Card 4: Troubleshooting */}
+                <div className="card">
+                  <span className="card-icon">🔧</span>
+                  <h3>Soluções para Problemas</h3>
+                  <div className="card-content">
+                    <p><strong>🚨 Problemas Comuns & Soluções:</strong></p>
+                    
+                    <p><strong>Esmalte descascando rápido:</strong></p>
+                    <ul>
+                      <li>✅ Use sempre base + 2 camadas + top coat</li>
+                      <li>✅ Desengordue bem antes da aplicação</li>
+                      <li>✅ Evite cremes nas mãos antes de esmaltar</li>
+                    </ul>
+
+                    <p><strong>Bolhas no esmalte:</strong></p>
+                    <ul>
+                      <li>✅ Aplique camadas mais finas</li>
+                      <li>✅ Deixe secar mais tempo entre camadas</li>
+                      <li>✅ Evite balançar o frasco (gira entre as palmas)</li>
+                    </ul>
+
+                    <p><strong>Cutículas ressecadas:</strong></p>
+                    <ul>
+                      <li>✅ Óleo de cutícula 2x ao dia</li>
+                      <li>✅ Hidratante específico para mãos</li>
+                      <li>✅ Evite retirar cutículas secas</li>
+                    </ul>
+
+                    <p><strong>Unha quebradiça:</strong></p>
+                    <ul>
+                      <li>✅ Base fortalecedora 3x por semana</li>
+                      <li>✅ Suplemento de biotina</li>
+                      <li>✅ Evite lixas muito grossas</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Card 5: Kit Essencial */}
+                <div className="card">
+                  <span className="card-icon">🎁</span>
+                  <h3>Kit Essencial para Casa</h3>
+                  <div className="card-content">
+                    <p><strong>🧰 Ferramentas Básicas:</strong></p>
+                    <ul>
+                      <li>Lima de vidro ou metal (180/240)</li>
+                      <li>Lixa polidor (buffer)</li>
+                      <li>Espátula para cutícula</li>
+                      <li>Alicate pequeno e afiado</li>
+                      <li>Separador de dedos</li>
+                    </ul>
+                    
+                    <p><strong>💄 Produtos Indispensáveis:</strong></p>
+                    <ul>
+                      <li>Base fortalecedora de qualidade</li>
+                      <li>Top coat secagem rápida</li>
+                      <li>Óleo de cutícula (amêndoa ou jojoba)</li>
+                      <li>Removedor sem acetona</li>
+                      <li>Algodão e hastes flexíveis</li>
+                    </ul>
+
+                    <p><strong>🌈 Cores Versáteis:</strong></p>
+                    <ul>
+                      <li>Nude rosado (combina com tudo)</li>
+                      <li>Vermelho clássico</li>
+                      <li>Branco (para francesinha)</li>
+                      <li>Preto (elegante)</li>
+                      <li>Uma cor tendência da estação</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Card 6: Cuidados Especiais */}
+                <div className="card">
+                  <span className="card-icon">🌿</span>
+                  <h3>Cuidados & Tratamentos</h3>
+                  <div className="card-content">
+                    <p><strong>💆‍♀️ Rotina de Cuidados:</strong></p>
+                    <ul>
+                      <li><strong>Manhã:</strong> Hidratante com FPS nas mãos</li>
+                      <li><strong>Tarde:</strong> Óleo nas cutículas se estiver seco</li>
+                      <li><strong>Noite:</strong> Creme nutritivo + massagem</li>
+                      <li><strong>Semanal:</strong> Esfoliação suave nas mãos</li>
+                    </ul>
+                    
+                    <p><strong>🏠 Receitas Caseiras:</strong></p>
+                    <ul>
+                      <li><strong>Fortalecedor:</strong> Azeite + limão (1x semana)</li>
+                      <li><strong>Hidratação:</strong> Mel + aveia para as mãos</li>
+                      <li><strong>Clareamento:</strong> Bicarbonato + água oxigenada</li>
+                      <li><strong>Crescimento:</strong> Massagem com óleo de ricínio</li>
+                    </ul>
+
+                    <p><strong>⚠️ Quando Procurar Profissional:</strong></p>
+                    <ul>
+                      <li>Infecções ou inflamações</li>
+                      <li>Unhas encravadas</li>
+                      <li>Mudanças na cor ou textura</li>
+                      <li>Dor persistente</li>
+                      <li>Procedimentos de alongamento</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
